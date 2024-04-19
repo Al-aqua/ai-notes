@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 
 class InputField extends StatelessWidget {
-  const InputField(
-      {super.key,
-      required this.title,
-      required this.hintText,
-      this.obscureText = false});
+  const InputField({
+    super.key,
+    required this.title,
+    required this.hintText,
+    this.obscureText = false,
+    this.validator,
+    required this.controller,
+  });
 
   final String title;
   final String hintText;
   final bool obscureText;
+  final String? Function(String?)? validator;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +29,8 @@ class InputField extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 10),
-        TextField(
+        TextFormField(
+          validator: validator,
           keyboardType: TextInputType.emailAddress,
           style: const TextStyle(fontSize: 18),
           decoration: InputDecoration(
