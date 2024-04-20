@@ -31,9 +31,9 @@ class InputField extends StatelessWidget {
         const SizedBox(height: 10),
         TextFormField(
           validator: validator,
-          keyboardType: TextInputType.emailAddress,
           style: const TextStyle(fontSize: 18),
           decoration: InputDecoration(
+            errorMaxLines: 2,
             contentPadding: const EdgeInsets.all(15),
             hintText: hintText,
             border: const OutlineInputBorder(),

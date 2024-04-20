@@ -1,5 +1,4 @@
-import 'package:ai_notes/app/login/presention.dart';
-import 'package:ai_notes/app/sign_up/presention.dart';
+import 'package:ai_notes/app/landing_page/presention.dart';
 import 'package:ai_notes/core/themes/dark_theme.dart';
 import 'package:ai_notes/core/themes/theme.dart';
 import 'package:flutter/material.dart';
@@ -28,9 +27,7 @@ class MyApp extends StatelessWidget {
       ),
       themeMode: ThemeMode.system,
       routes: {
-        '/': (context) => const Login(),
-        '/login': (context) => const Login(),
-        '/signup': (context) => const SignUp(),
+        '/': (context) => const LandingPage(),
       },
     );
   }
