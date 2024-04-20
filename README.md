@@ -1,16 +1,32 @@
-# ai_notes
+# AI Notes
 
-A new Flutter project.
+## The final year project for my Computer Science Degree
 
-## Getting Started
+### The project tasks
 
-This project is a starting point for a Flutter application.
+- **Finished**
 
-A few resources to get you started if this is your first Flutter project:
+  - Create the login and sign up pages
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- **In progress**
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+  - Add the auth using the pocketbase server
+
+- **To do**
+
+  - Design and create the Landing page
+  - Add the Appflowy text editor
+  - Design and create the files tree
+  - Use pocketbase to store and sync the files
+  - Add the search bar
+  - Design and create the settings page
+  - Add the AI assistant
+
+### The code base architecture
+
+I used a feature first pattern where I have two main folders the app folder
+and the core folder,the app folder contains a folder for each feature with
+a presentation file for the UI, a data file for data access, a business file
+for the logic and any other files if needed, and the core folder contains any
+common files like code need in more than one place in the app, the themes,
+the constants and the utils files.
