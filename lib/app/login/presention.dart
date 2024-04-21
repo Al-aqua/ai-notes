@@ -1,4 +1,5 @@
 import 'package:ai_notes/app/sign_up/presention.dart';
+import 'package:ai_notes/core/auth/auth.dart';
 import 'package:ai_notes/core/auth/validattion.dart';
 import 'package:ai_notes/core/components/input_field.dart';
 import 'package:flutter/material.dart';
@@ -76,15 +77,8 @@ class _LoginState extends State<Login> {
           children: [
             ElevatedButton(
               // TODO
-              onPressed: () {
-                if (_formKey.currentState!.validate()) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text('Login Successful'),
-                    ),
-                  );
-                }
-              },
+              onPressed: () => _submitForm(),
+
               style: ElevatedButton.styleFrom(
                 backgroundColor: Theme.of(context).colorScheme.primary,
                 foregroundColor: Theme.of(context).colorScheme.onPrimary,
@@ -162,5 +156,12 @@ class _LoginState extends State<Login> {
         )
       ],
     );
+  }
+
+  _submitForm() {
+    if (!_formKey.currentState!.validate()) return;
+    login(_emailController.text, _passwordController.text);
+    Navigator.of(context).pop();
+    debugPrint(pb.authStore.model.id);
   }
 }

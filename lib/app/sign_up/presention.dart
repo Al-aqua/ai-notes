@@ -1,4 +1,5 @@
 import 'package:ai_notes/app/login/presention.dart';
+import 'package:ai_notes/core/auth/auth.dart';
 import 'package:ai_notes/core/auth/validattion.dart';
 import 'package:ai_notes/core/components/input_field.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +17,22 @@ class _SignUpState extends State<SignUp> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
+
+  _submitForm() async {
+    if (!_formKey.currentState!.validate()) return;
+    String result = await signUp(
+        _userNameController.text,
+        _emailController.text,
+        _passwordController.text,
+        _confirmPasswordController.text);
+    notfiUser(result);
+  }
+
+  void notfiUser(String message) {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Text(message),
+    ));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -121,15 +138,7 @@ class _SignUpState extends State<SignUp> {
           children: [
             ElevatedButton(
               // TODO
-              onPressed: () {
-                if (_formKey.currentState!.validate()) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text('Login Successful'),
-                    ),
-                  );
-                }
-              },
+              onPressed: () => _submitForm(),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Theme.of(context).colorScheme.primary,
                 foregroundColor: Theme.of(context).colorScheme.onPrimary,

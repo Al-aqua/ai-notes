@@ -30,6 +30,7 @@ class InputField extends StatelessWidget {
         ),
         const SizedBox(height: 10),
         TextFormField(
+          controller: controller,
           validator: validator,
           style: const TextStyle(fontSize: 18),
           decoration: InputDecoration(

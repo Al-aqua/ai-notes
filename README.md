@@ -7,14 +7,15 @@
 - **Finished**
 
   - Create the login and sign up pages
+  - Add the auth using the pocketbase server
 
 - **In progress**
 
-  - Add the auth using the pocketbase server
+  - Design and create the Landing page
 
 - **To do**
 
-  - Design and create the Landing page
+  - Refactor the code for the auth
   - Add the Appflowy text editor
   - Design and create the files tree
   - Use pocketbase to store and sync the files

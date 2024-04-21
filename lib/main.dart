@@ -3,8 +3,10 @@ import 'package:ai_notes/core/themes/dark_theme.dart';
 import 'package:ai_notes/core/themes/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main() {
+void main() async {
+  await dotenv.load(fileName: ".env.dev");
   runApp(const MyApp());
 }
 
